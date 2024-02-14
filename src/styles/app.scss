@@ -1,5 +1,5 @@
 @import "mixin";
-
+@import "dashboard";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -23,9 +23,9 @@ a{
 }
 
 .purple{
-    color: rgb(47,0,255);
+    color: rgb(41, 3, 97);
 }
-.purple{
+.green{
     color: rgb(0,195,0);
 }
 
