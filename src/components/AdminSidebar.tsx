@@ -7,7 +7,7 @@ import { IoIosPeople } from "react-icons/io";
 const AdminSidebar = () => {
 
   // const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   return (
     <aside>
@@ -21,7 +21,12 @@ const AdminSidebar = () => {
             Icon={RiDashboardFill}
             location={location}
           /> */}
-          <li>
+          <li style={ 
+              {
+                 backgroundColor:location.pathname.includes("/admin/dashboard") ? "rgba(0,115,225,0.1)" : "white"
+              }
+            }
+          >
             <Link to={"/admin/dashboard"}>
               <RiDashboardFill/>
               Dashboard               
