@@ -33,4 +33,17 @@ a{
 .adminContainer{
    
     @include grid(1fr 4fr, 2rem);
+    height: 100vh;
+    background-color: rgb(247,247,247);
+    > aside{
+        width: 100%;
+        background-color: white;
+        padding: 1rem;
+        z-index: 10;
+        overflow-y: auto;
+        &::-webkit-scrollbar{
+            display: none;
+
+        }
+    }
 }
