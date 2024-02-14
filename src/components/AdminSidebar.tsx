@@ -21,38 +21,26 @@ const AdminSidebar = () => {
             Icon={RiDashboardFill}
             location={location}
           />
-          <li style={ 
-              {
-                 backgroundColor:location.pathname.includes("/admin/dashboard") ? "rgba(0,115,225,0.1)" : "white"
-              }
-            }
-          >
-            <Link to={"/admin/dashboard"} style={{
-              color: location.pathname.includes("/admin/dashboard") ? "rgb(0,115,255)" : "black"
-            }} >
-              <RiDashboardFill/>
-              Dashboard               
-              </Link >
-        </li>
-          <li>
-            <Link to={"/admin/product"}>
-              <RiShoppingBag3Fill/>
-              Product               
-              </Link >
-        </li>
-          <li>
-            <Link to={"/admin/customer"}>
-              <IoIosPeople/>
-              Customer               
-              </Link >
-        </li>
-          <li>
-            <Link to={"/admin/transaction"}>
-              <AiFillFileText/>
-              Transaction               
-              </Link >
-        </li>
-          
+          <Li
+            url="/admin/product"
+            text="Product"
+            Icon={RiShoppingBag3Fill}
+            location={location}
+          />
+          <Li
+            url="/admin/customer"
+            text="Customer"
+            Icon={IoIosPeople}
+            location={location}
+          />
+          <Li
+            url="/admin/transaction"
+            text="Transaction"
+            Icon={AiFillFileText}
+            location={location}
+          />
+         
+        
 
           
 
