@@ -2,7 +2,8 @@ import { FaRegBell } from "react-icons/fa"
 import AdminSidebar from "../components/AdminSidebar"
 import { BsSearch } from "react-icons/bs"
 import userImg  from "../assets/userimg.png"
-import { HiTrendingUp,HiTrendingDown } from "react-icons/hi";
+import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
+import data from "../assets/data.json"
 
 // const userImg = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fuser%2F&psig=AOvVaw3l0eqLnEVPLwmmzC6ijdNP&ust=1708022676041000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPjHi7y-q4QDFQAAAAAdAAAAABAE"
 
@@ -69,11 +70,16 @@ const Dashboard = () => {
           <div className="dashboard-categories">
             <h2>Inventory</h2>
             <div>
-              <CategoryItem
-                heading="Laptops"
-                value={70}
-                color="hsl(169,100%,55%)"
+              {
+                data.categories.map((i) => (
+                  <CategoryItem
+                    key={i.heading}
+                heading={i.heading}
+                value={i.value}
+                color={`hsl(${i.value*4},${i.value}%,55%)`}
               />
+                ))
+              }
             </div>
           </div>
         </section>
