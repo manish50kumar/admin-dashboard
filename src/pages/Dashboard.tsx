@@ -3,7 +3,8 @@ import AdminSidebar from "../components/AdminSidebar"
 import { BsSearch } from "react-icons/bs"
 import userImg  from "../assets/userimg.png"
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
-import data from "../assets/data.json"
+import data from "../assets/data.json";
+import { BarChart } from "../components/Charts";
 
 // const userImg = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fuser%2F&psig=AOvVaw3l0eqLnEVPLwmmzC6ijdNP&ust=1708022676041000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPjHi7y-q4QDFQAAAAAdAAAAABAE"
 
@@ -66,6 +67,14 @@ const Dashboard = () => {
           <div className="revenue-chart">
             <h2>Revenue & Transaction</h2>
             {/* Graph here */}
+            <BarChart
+            data_2={[300,144,433,655,237,755,190]}
+              data_1={[200, 444, 433, 556, 778, 455, 990]}
+              title_1="Revenue"
+              title_2="Transaction"
+              bgColor_1="rgb(0,115,255)"
+              bgColor_2="rgba(53,162,253,0.8)"
+            />
           </div>
           <div className="dashboard-categories">
             <h2>Inventory</h2>
