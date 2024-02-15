@@ -39,7 +39,7 @@ const columns: Column<DataType>[] = [
 
 
 const DashboardTable = ({data=[]}:{data:DataType[]}) => {
-    return  TableHOC<DataType>(columns, data, "Transaction-Box", "Top-Transaction")();;
+    return  TableHOC<DataType>(columns, data, "transaction-box", "Top Transaction")();;
     
   
 }

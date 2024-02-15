@@ -160,6 +160,17 @@
 
             }
         }
+
+        .transaction-box{
+            width: 100%;
+            padding: 1rem;
+            overflow-x: auto;
+            > h2{
+                margin: heading;
+                @include heading;
+                
+            }
+        }
     }
 }
 
