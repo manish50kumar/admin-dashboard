@@ -8,7 +8,7 @@ import { HiTrendingUp,HiTrendingDown } from "react-icons/hi";
 
 const Dashboard = () => {
   return (
-    <div className="adminContainer">
+    <div className="admin-container">
       
       {/* SideBar */}
 
@@ -25,7 +25,7 @@ const Dashboard = () => {
           <img src={userImg} alt="userImage" />
         </div>
 
-        <section className="widgetcontainer">
+        <section className="widget-container">
           <WidgetItem
             percent={80}
             amount={true}
@@ -61,6 +61,23 @@ const Dashboard = () => {
           
         </section>
 
+        <section className="graph-container">
+          <div className="revenue-chart">
+            <h2>Revenue & Transaction</h2>
+            {/* Graph here */}
+          </div>
+          <div className="dashboard-categories">
+            <h2>Inventory</h2>
+            <div>
+              <CategoryItem
+                heading="Laptops"
+                value={70}
+                color="hsl(169,100%,55%)"
+              />
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   )
@@ -76,7 +93,7 @@ interface WidgetItemProps{
 
 const WidgetItem = ({heading,value,percent,color,amount=false}:WidgetItemProps) =>(
   <article className="widget" >
-    <div className="widgetInfo">
+    <div className="widget-info">
       <p>{heading}</p>
       <h4>{amount ? `$${value}` : value}</h4>
       {
@@ -85,7 +102,7 @@ const WidgetItem = ({heading,value,percent,color,amount=false}:WidgetItemProps) 
       }
     </div>
 
-    <div className="widgetCircle"
+    <div className="widget-circle"
       style={{
         background:`conic-gradient(
           ${color} ${Math.abs(percent)/100*360}deg,
@@ -97,6 +114,25 @@ const WidgetItem = ({heading,value,percent,color,amount=false}:WidgetItemProps) 
     </div>
 
   </article>
+)
+
+interface CategoryItemProps{
+  color: string,
+  value: number,
+  heading:string,
+}
+
+const CategoryItem = ({color,value,heading}:CategoryItemProps) => (
+  <div className="category-item">
+    <h5>{heading}</h5>
+    <div>
+      <div style={{
+        backgroundColor: color,
+        width:`${value}%`
+      }}></div>
+    </div>
+    <span>{ value}%</span>
+  </div>
 )
 
 export default Dashboard
